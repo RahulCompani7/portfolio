@@ -1,0 +1,52 @@
+/* Navbar.css */
+
+nav {
+  width: 100%;
+  position: sticky;
+  top: 0;
+  left: 0;
+  background-color: #ffffff;
+  z-index: 99;
+}
+
+.nav__content {
+  max-width: 1200px;
+  margin: auto;
+  padding: 1.5rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo a {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #333; /* Change color as needed */
+  text-decoration: none;
+}
+
+.checkbox {
+  display: none;
+}
+
+ul {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  list-style: none;
+  transition: left 0.3s;
+}
+
+ul li a {
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  font-weight: 600;
+  color: #333; /* Change color as needed */
+  transition: 0.3s;
+}
+
+ul li a:hover {
+  color: #ca8a04; /* Change color as needed */
+}
+
+/* Add additional styles as needed */

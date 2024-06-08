@@ -1,0 +1,88 @@
+:root {
+  --primary-color: #4c4c47;
+  --primary-color-dark: #848fa5;
+  --secondary-color: #ca8a04;
+  --text-dark: #1c1c1c;
+  --text-light: #29bf12;
+  --extra-light: #a5ffd6;
+  --max-width: 1200px;
+}
+
+.vertical-timeline-element-content {
+  background: var(--primary-color-light);
+  color: #fff;
+  padding: 1rem;
+  border-radius: 10px;
+  width: calc(50% - 2rem); /* Reduced width */
+  margin: 0.5rem 0; /* Adjusted space between cards */
+  display: flex;
+  flex-direction: column;
+}
+
+.vertical-timeline-element-content::before {
+  content: "";
+  position: absolute;
+  border-style: solid;
+  border-width: 0.5rem;
+  border-color: transparent var(--primary-color-light) transparent transparent;
+  top: 50%;
+  left: -1rem;
+  transform: translateY(-50%);
+}
+
+.vertical-timeline-element-date {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-light);
+  margin-bottom: 0.5rem;
+  display: none; /* Remove duplicate duration */
+}
+
+.vertical-timeline-element-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 0.5rem;
+  text-align: left; /* Align text to the left */
+}
+
+.vertical-timeline-element-subtitle {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-light);
+  margin-bottom: 1rem; /* Increased margin */
+  text-align: left; /* Align text to the left */
+}
+
+.vertical-timeline-element p {
+  font-size: 1rem;
+  margin-bottom: 1rem; /* Increased margin */
+  text-align: left; /* Align text to the left */
+}
+
+.vertical-timeline-element-icon {
+  width: 80px; /* Adjusted width */
+  height: 60px; /* Adjusted height */
+  margin-right: 1rem; /* Added margin */
+}
+
+.vertical-timeline-element-icon img {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 10px; /* Make logo rectangular */
+}
+
+.vertical-timeline-element-content-arrow {
+  display: none;
+}
+
+.vertical-timeline-element:last-child .vertical-timeline-element-content {
+  margin-bottom: 0;
+}
+
+/* Media Queries for Mobile Responsiveness */
+@media (max-width: 768px) {
+  .vertical-timeline-element-content {
+    width: 90%;
+  }
+}

@@ -50,7 +50,7 @@ export default function Home() {
           >
             <p className="subtitle">HELLO</p>
             <h1 className="title">
-              I'm{" "}
+              I&apos;m{" "}
               <span>
                 Rahul
                 <br />
@@ -58,15 +58,16 @@ export default function Home() {
               </span>
             </h1>
             <p className="description">
-              Welcome to my portfolio! I'm Rahul Compani, a dynamic and driven
-              professional immersed in the ever-evolving world of technology.
-              With a passion for innovation and a knack for problem-solving, I
-              navigate the digital landscape with agility and finesse. As a tech
-              enthusiast and digital craftsman, I thrive on pushing boundaries
-              and exploring new frontiers. Equipped with a blend of creativity
-              and technical prowess, I craft digital experiences that inspire
-              and delight. Join me on this journey of exploration and
-              innovation, as we shape the future of technology together.
+              Welcome to my portfolio! I&apos;m Rahul Compani, a dynamic and
+              driven professional immersed in the ever-evolving world of
+              technology. With a passion for innovation and a knack for
+              problem-solving, I navigate the digital landscape with agility and
+              finesse. As a tech enthusiast and digital craftsman, I thrive on
+              pushing boundaries and exploring new frontiers. Equipped with a
+              blend of creativity and technical prowess, I craft digital
+              experiences that inspire and delight. Join me on this journey of
+              exploration and innovation, as we shape the future of technology
+              together.
             </p>
             <div className="social-icons-container">
               <div className="social-icons">

@@ -4,9 +4,9 @@
   --primary-color: #4c4c47;
   --primary-color-dark: #848fa5;
   --secondary-color: #ca8a04;
-  --text-dark: #1c1c1c;
-  --text-light: #29bf12;
-  --extra-light: #a5ffd6;
+  --text-dark: #ff9f1c;
+  --text-light: #000000;
+  --extra-light: white;
   --max-width: 1200px;
 }
 
@@ -24,19 +24,34 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
-nav {
+.NavBar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   position: fixed;
   top: 0;
   left: 0;
-  background-color: #ffffff;
   z-index: 99;
+  padding: 1rem 0;
+  background-color: transparent; /* Make parent container background transparent */
+}
+
+nav {
+  width: 80%;
+
+  background-color: #ff9f1c;
+  border-radius: 20px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative; /* Ensure nav is centered within the NavBar */
 }
 
 .nav__content {
-  max-width: var(--max-width);
-  margin: auto;
-  padding: 1.5rem 1rem;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -48,6 +63,7 @@ nav .logo a {
   color: var(--primary-color);
   transition: 0.3s;
 }
+
 nav .logo a:hover {
   color: var(--primary-color-dark);
 }
@@ -59,6 +75,7 @@ nav .checkbox {
 nav input {
   display: none;
 }
+
 nav .checkbox i {
   font-size: 2rem;
   color: var(--primary-color);
@@ -78,7 +95,7 @@ ul li a {
   border: 2px solid transparent;
   text-decoration: none;
   font-weight: 600;
-  color: var(--text-dark);
+  color: var(--text-light);
   transition: 0.3s;
 }
 
@@ -110,8 +127,7 @@ ul li a:hover {
 
 .section__container {
   min-height: 100vh;
-  max-width: var(--max-width);
-  margin-top: 50px;
+
   margin-left: 50px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -121,11 +137,21 @@ ul li a:hover {
   margin-left: 50px;
 }
 
+.Profileimage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.inter-var {
+  margin-top: 50px;
+}
 .section__container1 {
   margin: auto;
 }
 
 .content {
+  margin-top: 50px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -176,63 +202,6 @@ ul li a:hover {
 
 .icon.instagram {
   color: #e4405f; /* Instagram brand color */
-}
-
-.action__btns button {
-  font-size: 1rem;
-  font-weight: 600;
-  letter-spacing: 2px;
-  padding: 1rem 2rem;
-  outline: none;
-  border: 2px solid var(--primary-color);
-  border-radius: 10px;
-  transition: 0.3s;
-  cursor: pointer;
-  position: relative;
-  overflow: hidden;
-}
-
-.action__btns button::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 300%;
-  height: 300%;
-  background-color: var(--primary-color-dark);
-  transition: all 0.5s ease;
-  transform: translate(-50%, -50%) rotate(45deg);
-  z-index: 0;
-}
-
-.hire__me {
-  background-color: var(--primary-color);
-  color: #ffffff;
-}
-
-.hire__me:hover::before {
-  width: 0;
-  height: 0;
-}
-
-.hire__me:hover {
-  background-color: var(--primary-color-dark);
-  color: #ffffff;
-}
-
-.portfolio {
-  color: var(--primary-color);
-  background-color: #ffffff;
-}
-
-.portfolio:hover::before {
-  width: 0;
-  height: 0;
-}
-
-.portfolio:hover {
-  background-color: var(--primary-color-dark);
-  color: #ffffff;
 }
 
 .image {

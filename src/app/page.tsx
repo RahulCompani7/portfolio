@@ -2,7 +2,7 @@
 
 import React from "react";
 import { FaLinkedin, FaGithub, FaTwitter, FaInstagram } from "react-icons/fa";
-
+import { motion } from "framer-motion";
 import Navbar from "@/components/Nav";
 import Image from "next/image";
 import profile from "../assets/Blob.png";
@@ -17,7 +17,6 @@ import reactLogo from "../assets/physics.png";
 import typescriptLogo from "../assets/typescript.png";
 import uipathLogo from "../assets/Uipath.jpg";
 import mongoDbLogo from "../assets/mongodb-original-wordmark-icon-2015x2048-n6r3kuri.png";
-import { motion } from "framer-motion";
 import { FlipWords } from "../components/ui/flip-words";
 import { CardBody, CardContainer, CardItem } from "../components/ui/3d-card";
 import "./home.css";
@@ -28,17 +27,24 @@ export default function Home() {
 
   const variants = {
     initial: { opacity: 0, y: 20 },
-    animate: { opacity: 1, y: 0 },
+    animate: { opacity: 1, y: 0, transition: { duration: 0.5 } },
   };
 
   const imageVariants = {
     initial: { opacity: 0, scale: 0.8 },
-    animate: { opacity: 1, scale: 1 },
+    animate: { opacity: 1, scale: 1, transition: { duration: 1 } },
+  };
+
+  const skillVariants = {
+    initial: { opacity: 0, x: -20 },
+    animate: { opacity: 1, x: 0, transition: { duration: 1 } },
   };
 
   return (
     <>
-      <Navbar />
+      
+        <Navbar />
+      
 
       <section className="section">
         <div className="section__container">
@@ -127,22 +133,22 @@ export default function Home() {
           <motion.div
             initial="initial"
             animate="animate"
-            variants={variants}
+            variants={skillVariants}
             className="content"
           >
             {" "}
             <div className="container">
               <h1>This is what I am good at</h1>
               <div className="skills">
-                <div className="skill">
+                <motion.div variants={skillVariants} className="skill">
                   <Image src={htmlLogo} alt="HTML" width={100} height={100} />
                   <p>HTML</p>
-                </div>
-                <div className="skill">
+                </motion.div>
+                <motion.div variants={skillVariants} className="skill">
                   <Image src={cssLogo} alt="CSS" width={100} height={100} />
                   <p>CSS</p>
-                </div>
-                <div className="skill">
+                </motion.div>
+                <motion.div variants={skillVariants} className="skill">
                   <Image
                     src={javascriptLogo}
                     alt="JavaScript"
@@ -150,12 +156,12 @@ export default function Home() {
                     height={100}
                   />
                   <p>JavaScript</p>
-                </div>
-                <div className="skill">
+                </motion.div>
+                <motion.div variants={skillVariants} className="skill">
                   <Image src={javaLogo} alt="Java" width={100} height={100} />
                   <p>Java</p>
-                </div>
-                <div className="skill">
+                </motion.div>
+                <motion.div variants={skillVariants} className="skill">
                   <Image
                     src={typescriptLogo}
                     alt="TypeScript"
@@ -163,12 +169,12 @@ export default function Home() {
                     height={100}
                   />
                   <p>TypeScript</p>
-                </div>
-                <div className="skill">
+                </motion.div>
+                <motion.div variants={skillVariants} className="skill">
                   <Image src={reactLogo} alt="React" width={100} height={100} />
                   <p>React.js</p>
-                </div>
-                <div className="skill">
+                </motion.div>
+                <motion.div variants={skillVariants} className="skill">
                   <Image
                     src={nextLogo}
                     alt="Next.js"
@@ -176,8 +182,8 @@ export default function Home() {
                     height={100}
                   />
                   <p>Next.js</p>
-                </div>
-                <div className="skill">
+                </motion.div>
+                <motion.div variants={skillVariants} className="skill">
                   <Image
                     src={nodeLogo}
                     alt="Node.js"
@@ -185,12 +191,12 @@ export default function Home() {
                     height={100}
                   />
                   <p>Node.js</p>
-                </div>
-                <div className="skill">
+                </motion.div>
+                <motion.div variants={skillVariants} className="skill">
                   <Image src={mysqlLogo} alt="MySQL" width={100} height={100} />
                   <p>MySQL</p>
-                </div>
-                <div className="skill">
+                </motion.div>
+                <motion.div variants={skillVariants} className="skill">
                   <Image
                     src={mongoDbLogo}
                     alt="MongoDB"
@@ -198,8 +204,8 @@ export default function Home() {
                     height={100}
                   />
                   <p>MongoDB</p>
-                </div>
-                <div className="skill">
+                </motion.div>
+                <motion.div variants={skillVariants} className="skill">
                   <Image
                     src={uipathLogo}
                     alt="UiPath"
@@ -207,7 +213,7 @@ export default function Home() {
                     height={100}
                   />
                   <p>UiPath</p>
-                </div>
+                </motion.div>
                 {/* Add other skills in a similar manner */}
               </div>
             </div>

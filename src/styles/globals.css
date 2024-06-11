@@ -1,0 +1,251 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* globals.css */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+
+:root {
+  --primary-color: #4c4c47;
+  --primary-color-dark: #848fa5;
+  --secondary-color: #ca8a04;
+  --text-dark: #ff9f1c;
+  --text-light: #000000;
+  --extra-light: white;
+  --max-width: 1200px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+.NavBar {
+  position: fixed;
+  padding: 1rem 0;
+  z-index: 1000;
+}
+
+nav {
+  width: 80%;
+  background-color: #ff9f1c;
+  border-radius: 20px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative; /* Ensure nav is centered within the NavBar */
+}
+
+.nav__content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+nav .logo a {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  transition: 0.3s;
+}
+
+nav .logo a:hover {
+  color: var(--primary-color-dark);
+}
+
+nav .checkbox {
+  display: none;
+}
+
+nav input {
+  display: none;
+}
+
+nav .checkbox i {
+  font-size: 2rem;
+  color: var(--primary-color);
+  cursor: pointer;
+}
+
+ul {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  list-style: none;
+  transition: left 0.3s;
+}
+
+ul li a {
+  padding: 0.5rem 1rem;
+  border: 2px solid transparent;
+  text-decoration: none;
+  font-weight: 600;
+  color: var(--text-light);
+  transition: 0.3s;
+}
+
+ul li a:hover {
+  border-top-color: var(--secondary-color);
+  border-bottom-color: var(--secondary-color);
+  color: var(--secondary-color);
+}
+
+.social-icons {
+}
+
+.social-icons .icon {
+  font-size: 2rem;
+  color: var(--text-dark);
+  transition: color 0.3s;
+}
+
+.social-icons .icon:hover {
+  color: var(--primary-color);
+}
+
+.section__container {
+}
+
+.profileImage Image {
+  margin-left: 50px;
+}
+
+.Profileimage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.section__container1 {
+  margin: auto;
+}
+
+.content {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.subtitle {
+  letter-spacing: 2px;
+  color: var(--text-light);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 400;
+  line-height: 3rem;
+  color: var(--text-dark);
+  margin-bottom: 1rem;
+}
+
+.title span {
+  font-weight: 600;
+}
+
+.description {
+  text-align: justify;
+  line-height: 1.5rem;
+  color: var(--text-light);
+  margin-bottom: 2rem;
+}
+
+.action__btns {
+  display: flex;
+  gap: 1rem;
+}
+
+.icon.linkedin {
+  color: #0077b5; /* LinkedIn brand color */
+}
+
+.icon.github {
+  color: #181717; /* GitHub brand color */
+}
+
+.icon.twitter {
+  color: #1da1f2; /* Twitter brand color */
+}
+
+.icon.instagram {
+  color: #e4405f; /* Instagram brand color */
+}
+
+.image {
+  margin-left: 30px;
+  display: grid;
+  place-items: center;
+}
+
+.image img {
+  width: min(35rem, 90%);
+  border-radius: 50%; /* Set border-radius to make the image circular */
+  transition: box-shadow 0.3s ease; /* Only transition box-shadow property */
+}
+
+.container {
+  text-align: center;
+}
+
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.skill {
+  margin: 10px;
+  text-align: center;
+}
+
+.skill img {
+  border-radius: 10px;
+}
+
+.skill p {
+  margin-top: 5px;
+}

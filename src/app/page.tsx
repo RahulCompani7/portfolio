@@ -58,19 +58,20 @@ export default function Home() {
                 </span>
               </h1>
               <p className="description  hidden sm:block">
-                Hey there! I'm Rahul, your friendly neighborhood tech wizard.
+                Hey there! I&apos;m Rahul, your friendly neighborhood tech
+                wizard.
                 <br />
                 Welcome to my digital playground! As a web developer
                 extraordinaire, I spend my days sprinkling pixels with magic and
-                turning lines of code into works of art. But when I'm not
-                crafting digital wonders, you'll catch me riding the waves of
-                the latest tech trends, sharing my wisdom with eager minds, or
-                escaping into the pages of a good book. <br />
+                turning lines of code into works of art. But when I&apos;m not
+                crafting digital wonders, you&apos;ll catch me riding the waves
+                of the latest tech trends, sharing my wisdom with eager minds,
+                or escaping into the pages of a good book. <br />
                 From crafting captivating web experiences at Sustally to
                 orchestrating digital symphonies at OpenText, my journey has
-                been nothing short of exhilarating. Along the way, I've tinkered
-                with tech, danced with data, and embraced every challenge with a
-                grin.
+                been nothing short of exhilarating. Along the way, I&apos;ve
+                tinkered with tech, danced with data, and embraced every
+                challenge with a grin.
               </p>
             </div>
 

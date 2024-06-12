@@ -12,8 +12,8 @@ export default function Navbar() {
           <label htmlFor="check" className="hidden">
             <i className="ri-menu-line"></i>
           </label>
-          <input type="checkbox" name="check" id="check" className="hidden"/>
-          <ul>
+          <input type="checkbox" name="check" id="check" className="hidden" />
+          <ul className="flex hidden sm:flex">
             <li>
               <Link href="/">Home</Link>
             </li>

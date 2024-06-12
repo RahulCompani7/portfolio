@@ -44,185 +44,216 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      
-
-      <section className=" section bg-extra-light">
-        <div className="section__container min-h-screen flex px-16">
-          <div className="content w-2/4 flex justify-center">
-            <p className="subtitle">HELLO</p>
-            <h1 className="title">
-              I'm{" "}
-              <span>
-                Rahul
+      <div className="bg-white">
+        <section className=" section bg-extra-light pt-20">
+          <div className="section__container min-h-screen flex px-16 flex-col">
+            <div className="content flex justify-center items-center text-center">
+              <p className="subtitle">HELLO</p>
+              <h1 className="title">
+                I'm{" "}
+                <span>
+                  Rahul
+                  <br />
+                  <FlipWords words={words} />
+                </span>
+              </h1>
+              <p className="description  hidden sm:block">
+                Hey there! I'm Rahul, your friendly neighborhood tech wizard.
                 <br />
-                <FlipWords words={words} />
-              </span>
-            </h1>
-            <p className="description">
-              Welcome to my portfolio! I'm Rahul Compani, a dynamic and driven
-              professional immersed in the ever-evolving world of technology.
-              With a passion for innovation and a knack for problem-solving, I
-              navigate the digital landscape with agility and finesse. As a tech
-              enthusiast and digital craftsman, I thrive on pushing boundaries
-              and exploring new frontiers. Equipped with a blend of creativity
-              and technical prowess, I craft digital experiences that inspire
-              and delight. Join me on this journey of exploration and
-              innovation, as we shape the future of technology together.
-            </p>
-          </div>
-          <div className="w-2/4 flex justify-center items-center">
-            <CardContainer>
-              <CardBody>
-                <CardItem translateZ="1" className="w-full mt-4">
-                  <motion.div
-                    initial="initial"
-                    animate="animate"
-                    variants={imageVariants}
-                    className="Profileimage"
+                Welcome to my digital playground! As a web developer
+                extraordinaire, I spend my days sprinkling pixels with magic and
+                turning lines of code into works of art. But when I'm not
+                crafting digital wonders, you'll catch me riding the waves of
+                the latest tech trends, sharing my wisdom with eager minds, or
+                escaping into the pages of a good book. <br />
+                From crafting captivating web experiences at Sustally to
+                orchestrating digital symphonies at OpenText, my journey has
+                been nothing short of exhilarating. Along the way, I've tinkered
+                with tech, danced with data, and embraced every challenge with a
+                grin.
+              </p>
+            </div>
+
+            <div className="flex justify-center items-center flex-col">
+              <CardContainer>
+                <CardBody>
+                  <CardItem translateZ="1" className="w-full mt-4">
+                    <motion.div
+                      initial="initial"
+                      animate="animate"
+                      variants={imageVariants}
+                      className="Profileimage "
+                    >
+                      <Image
+                        src={profile}
+                        height="400"
+                        width="400"
+                        className="transform transition duration-300 hover:translate-y-2 hover:scale-105"
+                        alt="thumbnail"
+                      />
+                    </motion.div>
+                  </CardItem>
+                </CardBody>
+              </CardContainer>
+              <div className="social-icons-container flex justify-start items-center mt-4">
+                <div className="social-icons flex gap-4">
+                  <a
+                    href="https://www.linkedin.com/in/rahul-compani-713a12210"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="transform transition hover:-translate-y-2 hover:shadow-lg"
                   >
                     <Image
-                      src={profile}
-                      height="500"
-                      width="500"
-                      className=""
-                      alt="thumbnail"
+                      src={linkedinLogo}
+                      alt="CSS"
+                      width={50}
+                      height={50}
                     />
-                  </motion.div>
-                </CardItem>
-              </CardBody>
-            </CardContainer>
-          </div>
-          <div className="social-icons-container w-1/4 flex justify-center items-center">
-            <div className="social-icons flex flex-col gap-4">
-              <a
-                href="https://www.linkedin.com/in/rahul-compani-713a12210"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Image src={linkedinLogo} alt="CSS" width={75} height={75} />
-              </a>
-              <a
-                href="https://github.com/RahulCompani7"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Image src={githubLogo} alt="CSS" width={75} height={75} />
-              </a>
-              <a
-                href="https://x.com/RahulCompani"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Image src={xLogo} alt="CSS" width={75} height={75} />
-              </a>
-              <a
-                href="https://www.instagram.com/rahulcompani"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Image src={instagramLogo} alt="CSS" width={75} height={75} />
-              </a>
-              <a
-                href="https://mail.google.com/mail/?view=cm&fs=1&to=rahulcompani7@gmail.com"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Image src={gmailLogo} alt="CSS" width={75} height={75} />
-              </a>
-            </div>
-          </div>
-        </div>
-        <div className="section__container1 mx-auto">
-          <motion.div
-            initial="initial"
-            animate="animate"
-            variants={skillVariants}
-            className="content"
-          >
-            <div className="container">
-              <h1 className="text-2xl font-bold mb-8">
-                This is what I am good at
-              </h1>
-              <div className="skills flex flex-wrap justify-center">
-                <div className="skill m-4 text-center">
-                  <Image src={htmlLogo} alt="HTML" width={100} height={100} />
-                  <p className="mt-2">HTML</p>
-                </div>
-                <div className="skill m-4 text-center">
-                  <Image src={cssLogo} alt="CSS" width={100} height={100} />
-                  <p className="mt-2">CSS</p>
-                </div>
-                <div className="skill m-4 text-center">
-                  <Image
-                    src={javascriptLogo}
-                    alt="JavaScript"
-                    width={100}
-                    height={100}
-                  />
-                  <p className="mt-2">JavaScript</p>
-                </div>
-                <div className="skill m-4 text-center">
-                  <Image src={javaLogo} alt="Java" width={100} height={100} />
-                  <p className="mt-2">Java</p>
-                </div>
-                <div className="skill m-4 text-center">
-                  <Image
-                    src={typescriptLogo}
-                    alt="TypeScript"
-                    width={100}
-                    height={100}
-                  />
-                  <p className="mt-2">TypeScript</p>
-                </div>
-                <div className="skill m-4 text-center">
-                  <Image src={reactLogo} alt="React" width={100} height={100} />
-                  <p className="mt-2">React.js</p>
-                </div>
-                <div className="skill m-4 text-center">
-                  <Image
-                    src={nextLogo}
-                    alt="Next.js"
-                    width={100}
-                    height={100}
-                  />
-                  <p className="mt-2">Next.js</p>
-                </div>
-                <div className="skill m-4 text-center">
-                  <Image
-                    src={nodeLogo}
-                    alt="Node.js"
-                    width={100}
-                    height={100}
-                  />
-                  <p className="mt-2">Node.js</p>
-                </div>
-                <div className="skill m-4 text-center">
-                  <Image src={mysqlLogo} alt="MySQL" width={100} height={100} />
-                  <p className="mt-2">MySQL</p>
-                </div>
-                <div className="skill m-4 text-center">
-                  <Image
-                    src={mongoDbLogo}
-                    alt="MongoDB"
-                    width={100}
-                    height={100}
-                  />
-                  <p className="mt-2">MongoDB</p>
-                </div>
-                <div className="skill m-4 text-center">
-                  <Image
-                    src={uipathLogo}
-                    alt="UiPath"
-                    width={100}
-                    height={100}
-                  />
-                  <p className="mt-2">UiPath</p>
+                  </a>
+                  <a
+                    href="https://github.com/RahulCompani7"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="transform transition hover:-translate-y-2 hover:shadow-lg"
+                  >
+                    <Image src={githubLogo} alt="CSS" width={50} height={50} />
+                  </a>
+                  <a
+                    href="https://mail.google.com/mail/?view=cm&fs=1&to=rahulcompani7@gmail.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="transform transition hover:-translate-y-2 hover:shadow-lg"
+                  >
+                    <Image src={gmailLogo} alt="CSS" width={50} height={50} />
+                  </a>
+
+                  <a
+                    href="https://x.com/RahulCompani"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="transform transition hover:-translate-y-2 hover:shadow-lg"
+                  >
+                    <Image src={xLogo} alt="CSS" width={50} height={50} />
+                  </a>
+                  <a
+                    href="https://www.instagram.com/rahulcompani"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="transform transition hover:-translate-y-2 hover:shadow-lg "
+                  >
+                    <Image
+                      src={instagramLogo}
+                      alt="CSS"
+                      width={50}
+                      height={50}
+                    />
+                  </a>
                 </div>
               </div>
             </div>
-          </motion.div>
-        </div>
-      </section>
+          </div>
+          <div className="section__container1 mx-auto">
+            <motion.div
+              initial="initial"
+              animate="animate"
+              variants={skillVariants}
+              className="content"
+            >
+              <div className="container">
+                <h1 className="text-2xl font-bold mb-8">
+                  This is what I am good at
+                </h1>
+                <div className="skills flex flex-wrap justify-center">
+                  <div className="skill m-4 text-center">
+                    <Image src={htmlLogo} alt="HTML" width={100} height={100} />
+                    <p className="mt-2">HTML</p>
+                  </div>
+                  <div className="skill m-4 text-center">
+                    <Image src={cssLogo} alt="CSS" width={100} height={100} />
+                    <p className="mt-2">CSS</p>
+                  </div>
+                  <div className="skill m-4 text-center">
+                    <Image
+                      src={javascriptLogo}
+                      alt="JavaScript"
+                      width={100}
+                      height={100}
+                    />
+                    <p className="mt-2">JavaScript</p>
+                  </div>
+                  <div className="skill m-4 text-center">
+                    <Image src={javaLogo} alt="Java" width={100} height={100} />
+                    <p className="mt-2">Java</p>
+                  </div>
+                  <div className="skill m-4 text-center">
+                    <Image
+                      src={typescriptLogo}
+                      alt="TypeScript"
+                      width={100}
+                      height={100}
+                    />
+                    <p className="mt-2">TypeScript</p>
+                  </div>
+                  <div className="skill m-4 text-center">
+                    <Image
+                      src={reactLogo}
+                      alt="React"
+                      width={100}
+                      height={100}
+                    />
+                    <p className="mt-2">React.js</p>
+                  </div>
+                  <div className="skill m-4 text-center">
+                    <Image
+                      src={nextLogo}
+                      alt="Next.js"
+                      width={100}
+                      height={100}
+                    />
+                    <p className="mt-2">Next.js</p>
+                  </div>
+                  <div className="skill m-4 text-center">
+                    <Image
+                      src={nodeLogo}
+                      alt="Node.js"
+                      width={100}
+                      height={100}
+                    />
+                    <p className="mt-2">Node.js</p>
+                  </div>
+                  <div className="skill m-4 text-center">
+                    <Image
+                      src={mysqlLogo}
+                      alt="MySQL"
+                      width={100}
+                      height={100}
+                    />
+                    <p className="mt-2">MySQL</p>
+                  </div>
+                  <div className="skill m-4 text-center">
+                    <Image
+                      src={mongoDbLogo}
+                      alt="MongoDB"
+                      width={100}
+                      height={100}
+                    />
+                    <p className="mt-2">MongoDB</p>
+                  </div>
+                  <div className="skill m-4 text-center">
+                    <Image
+                      src={uipathLogo}
+                      alt="UiPath"
+                      width={100}
+                      height={100}
+                    />
+                    <p className="mt-2">UiPath</p>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+      </div>
     </>
   );
 }

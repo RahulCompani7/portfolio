@@ -25,6 +25,12 @@ const config: Config = {
         "text-light": "#000000",
         "extra-light": "white",
       },
+      screens: {
+        sm: "640px",
+        md: "768px",
+        lg: "1024px",
+        xl: "1280px",
+      },
     },
   },
   plugins: [],

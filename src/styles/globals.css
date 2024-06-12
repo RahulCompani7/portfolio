@@ -33,7 +33,7 @@ body {
 }
 
 /* globals.css */
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Arimo&display=swap");
 
 :root {
   --primary-color: #4c4c47;
@@ -56,7 +56,7 @@ a {
 }
 
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: 'Arimo', sans-serif;
 }
 
 .NavBar {
@@ -78,6 +78,7 @@ nav {
 }
 
 .nav__content {
+  padding: 10px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -109,11 +110,7 @@ nav .checkbox i {
 }
 
 ul {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  list-style: none;
-  transition: left 0.3s;
+ 
 }
 
 ul li a {

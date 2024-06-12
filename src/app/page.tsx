@@ -50,7 +50,7 @@ export default function Home() {
             <div className="content flex justify-center items-center text-center">
               <p className="subtitle">HELLO</p>
               <h1 className="title">
-                I'm{" "}
+                I&apos;m{" "}
                 <span>
                   Rahul
                   <br />

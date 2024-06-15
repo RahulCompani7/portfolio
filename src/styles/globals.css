@@ -56,7 +56,7 @@ a {
 }
 
 body {
-  font-family: 'Arimo', sans-serif;
+  font-family: "Arimo", sans-serif;
 }
 
 .NavBar {
@@ -67,7 +67,7 @@ body {
 
 nav {
   width: 80%;
-  background-color: #ff9f1c;
+  opacity: 100%;
   border-radius: 20px;
   padding-left: 1rem;
   padding-right: 1rem;
@@ -87,20 +87,12 @@ nav {
 nav .logo a {
   font-size: 1.5rem;
   font-weight: 600;
-  color: var(--primary-color);
+  color: #ffffff;
   transition: 0.3s;
 }
 
 nav .logo a:hover {
   color: var(--primary-color-dark);
-}
-
-nav .checkbox {
-  display: none;
-}
-
-nav input {
-  display: none;
 }
 
 nav .checkbox i {
@@ -109,16 +101,12 @@ nav .checkbox i {
   cursor: pointer;
 }
 
-ul {
- 
-}
-
 ul li a {
   padding: 0.5rem 1rem;
   border: 2px solid transparent;
   text-decoration: none;
   font-weight: 600;
-  color: var(--text-light);
+  color: #ffffff;
   transition: 0.3s;
 }
 
@@ -126,26 +114,6 @@ ul li a:hover {
   border-top-color: var(--secondary-color);
   border-bottom-color: var(--secondary-color);
   color: var(--secondary-color);
-}
-
-.social-icons {
-}
-
-.social-icons .icon {
-  font-size: 2rem;
-  color: var(--text-dark);
-  transition: color 0.3s;
-}
-
-.social-icons .icon:hover {
-  color: var(--primary-color);
-}
-
-.section__container {
-}
-
-.profileImage Image {
-  margin-left: 50px;
 }
 
 .Profileimage {
@@ -159,7 +127,6 @@ ul li a:hover {
 }
 
 .content {
-  margin-top: 50px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -176,7 +143,7 @@ ul li a:hover {
   font-size: 2.5rem;
   font-weight: 400;
   line-height: 3rem;
-  color: var(--text-dark);
+  color: #132a13;
   margin-bottom: 1rem;
 }
 

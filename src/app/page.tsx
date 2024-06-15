@@ -135,7 +135,7 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-              <div className="flex justify-center items-start flex-col mt-4 xl:mt-0 ">
+              <div className="flex justify-center items-center flex-col mt-4 xl:mt-0 ">
                 <CardContainer>
                   <CardBody>
                     <CardItem translateZ="1" className="w-full mt-4">

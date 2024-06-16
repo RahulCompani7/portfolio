@@ -1,5 +1,5 @@
 import type { Config } from "tailwindcss";
-
+/** @type {import('next').NextConfig} */
 const {
   default: flattenColorPalette,
 } = require("tailwindcss/lib/util/flattenColorPalette");

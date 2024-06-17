@@ -3,9 +3,12 @@ import Link from "next/link";
 
 export default function Navbar() {
   return (
-    <div className="NavBar flex items-center justify-center w-full fixed top-0 left-0 z-100">
-      <nav className="w-4/5 opacity-100 rounded-2xl px-4 flex items-center justify-between relative">
-        <div className="nav__content w-full flex justify-between">
+    <div className="NavBar flex items-center justify-center w-full fixed top-0 left-0 z-[100]">
+      <nav
+        className="w-4/5  rounded-2xl px-4 flex items-center justify-between relative bg-black "
+        style={{ border: "0.1px solid #222222 " }}
+      >
+        <div className="nav__content w-full flex justify-between ">
           <div className="logo text-white">
             <Link href="/">Rahul Compani</Link>
           </div>

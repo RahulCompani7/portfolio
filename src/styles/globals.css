@@ -66,8 +66,8 @@ body {
 }
 
 nav {
+  border: #ffffff;
   width: 80%;
-  opacity: 100%;
   border-radius: 20px;
   padding-left: 1rem;
   padding-right: 1rem;
@@ -92,8 +92,9 @@ nav .logo a {
 }
 
 nav .logo a:hover {
-  color: var(--primary-color-dark);
+  color: #636363;
 }
+
 
 nav .checkbox i {
   font-size: 2rem;
@@ -111,9 +112,8 @@ ul li a {
 }
 
 ul li a:hover {
-  border-top-color: var(--secondary-color);
-  border-bottom-color: var(--secondary-color);
-  color: var(--secondary-color);
+  background-color: #222222;
+  border-radius: 20px;
 }
 
 .Profileimage {
@@ -134,7 +134,7 @@ ul li a:hover {
 
 .subtitle {
   letter-spacing: 2px;
-  color: var(--text-light);
+  color: white;
   font-weight: 600;
   margin-bottom: 0.5rem;
 }
@@ -143,7 +143,7 @@ ul li a:hover {
   font-size: 2.5rem;
   font-weight: 400;
   line-height: 3rem;
-  color: #132a13;
+
   margin-bottom: 1rem;
 }
 
@@ -154,7 +154,6 @@ ul li a:hover {
 .description {
   text-align: justify;
   line-height: 1.5rem;
-  color: var(--text-light);
   margin-bottom: 2rem;
 }
 
@@ -212,4 +211,41 @@ ul li a:hover {
 
 .skill p {
   margin-top: 5px;
+}
+
+/* Customize the width of the scrollbar */
+::-webkit-scrollbar {
+  width: 12px; /* Width of the vertical scrollbar */
+  height: 12px; /* Height of the horizontal scrollbar */
+}
+
+/* Customize the track (background) of the scrollbar */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Customize the thumb (the draggable part of the scrollbar) */
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 6px;
+}
+
+/* Customize the thumb on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Optional: Customize the corner between the vertical and horizontal scrollbar (for scrollable elements) */
+::-webkit-scrollbar-corner {
+  background: #f1f1f1;
+}
+
+.no-visible-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.no-visible-scrollbar::-webkit-scrollbar {
+  display: none;
 }

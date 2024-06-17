@@ -51,6 +51,7 @@ export const LinkPreview = ({
     });
     src = `https://api.microlink.io/?${params}`;
   } else {
+    console.log(imageSrc);
     src = imageSrc;
   }
 

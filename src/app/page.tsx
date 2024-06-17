@@ -73,7 +73,7 @@ export default function Home() {
     <>
       <Navbar />
 
-      <div className="section__container h-full w-full flex flex-col xl:flex-row p-20 mt-52 xl:mt-0 ">
+      <div className="section__container h-full w-full flex flex-col xl:flex-row pt-20 xl:p-20 mt-20 xl:mt-0 ">
         <div className="content text-center flex flex-col justify-center items-center xl:items-start xl:text-start z-[100]">
           <p className="subtitle">HELLO</p>
           <h1 className="title ">

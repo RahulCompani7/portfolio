@@ -69,7 +69,7 @@ export default function About() {
             animate={{ opacity: 1 }}
             transition={{ duration: 1.5 }}
           >
-            I'm Rahul Compani, your friendly neighborhood tech wizard.
+            I&apos;m Rahul Compani, your friendly neighborhood tech wizard.
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -79,10 +79,10 @@ export default function About() {
           >
             Welcome to my digital playground! As a web developer extraordinaire,
             I spend my days sprinkling pixels with magic and turning lines of
-            code into works of art. But when I'm not crafting digital wonders,
-            you'll catch me riding the waves of the latest tech trends, sharing
-            my wisdom with eager minds, or escaping into the pages of a good
-            book.
+            code into works of art. But when I&apos;m not crafting digital
+            wonders, you&apos;ll catch me riding the waves of the latest tech
+            trends, sharing my wisdom with eager minds, or escaping into the
+            pages of a good book.
           </motion.p>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -92,8 +92,9 @@ export default function About() {
           >
             From crafting captivating web experiences at Sustally to
             orchestrating digital symphonies at OpenText, my journey has been
-            nothing short of exhilarating. Along the way, I've tinkered with
-            tech, danced with data, and embraced every challenge with a grin.
+            nothing short of exhilarating. Along the way, I&apos;ve tinkered
+            with tech, danced with data, and embraced every challenge with a
+            grin.
           </motion.p>
         </div>
         <div className="xl:w-1/3">

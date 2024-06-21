@@ -1,7 +1,15 @@
 import "../styles/globals.css";
 import Link from "next/link";
+import { useRef } from "react";
 
 export default function Navbar() {
+  const contactRef = useRef<HTMLDivElement>(null);
+
+  const scrollToContact = () => {
+    if (contactRef.current) {
+      contactRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
   return (
     <div className="NavBar flex items-center justify-center w-full fixed top-0 left-0 z-[100]">
       <nav
@@ -28,10 +36,12 @@ export default function Navbar() {
                 <Link href="/projects">Projects</Link>
               </li>
               <li>
-                <Link href="/portfolio">Portfolio</Link>
+                <a href="/Resume_RahulCompani.pdf" download>
+                  Resume
+                </a>
               </li>
               <li>
-                <Link href="/contact">Contact</Link>
+              <a onClick={scrollToContact} style={{ cursor: "pointer" }}>Contact</a>
               </li>
             </ul>
           </span>

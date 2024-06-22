@@ -103,8 +103,9 @@ export default function Experience() {
                   visually informative charts.
                 </li>
                 <li>
-                  Integrated Google Cloud's Natural Language API for sentiment
-                  analysis, improving the accuracy of assessments by 20%.
+                  Integrated Google Cloud&apos;s Natural Language API for
+                  sentiment analysis, improving the accuracy of assessments by
+                  20%.
                 </li>
               </ul>
               <div className="mt-4 text-gray-400 text-sm ">

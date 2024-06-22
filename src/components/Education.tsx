@@ -103,7 +103,7 @@ export default function Education() {
                   visually informative charts.
                 </li>
                 <li>
-                  Integrated Google Cloud's Natural Language API for sentiment
+                  Integrated Google Cloud&apos;s Natural Language API for sentiment
                   analysis, improving the accuracy of assessments by 20%.
                 </li>
               </ul>

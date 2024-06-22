@@ -88,7 +88,7 @@ export default function Home1() {
 
   return (
     <>
-      <div className="section__container h-full w-full flex flex-col xl:flex-row pt-20 xl:p-20 mt-20 xl:mt-0 justify-around">
+      <div className="section__container  w-full flex flex-col xl:flex-row pt-20 xl:p-20 mt-20 xl:mt-0 justify-around">
         <motion.div
           className="content text-center flex flex-col justify-center items-center xl:items-start xl:text-start z-[100] text-4xl"
           initial="initial"

@@ -14,7 +14,7 @@ import { motion } from "framer-motion";
 import Navbar from "@/components/Nav";
 import { BackgroundBeams } from "@/components/ui/background-beams";
 import Home1 from "@/components/Home";
-
+import Home2 from "@/components/Home2";
 import "../styles/globals.css";
 import { LinkPreview } from "@/components/ui/link-preview";
 
@@ -73,6 +73,7 @@ export default function Home() {
       <Navbar />
 
       <Home1 />
+      <Home2 />
       
     </>
   );

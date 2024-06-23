@@ -61,7 +61,7 @@ export default function About() {
   return (
     <div className="p-2 pb-10">
       <Navbar />
-      <div className="section__container flex flex-col xl:flex-row mt-20 xl:mt-0 justify-around items-center pt-28">
+      <div className="section__container flex xl:flex-row flex-col-reverse  xl:mt-0 mt-2 justify-around items-center pt-28">
         <div className="description text-[#ffffff] flex flex-col items-start xl:w-1/2 px-6 ">
           <motion.h1
             className="text-3xl font-bold mb-4"

@@ -155,7 +155,7 @@ export default function Home1() {
                       className="transform transition  hover:translate-y-2 hover:scale-110 duration-300"
                       alt="thumbnail"
                     />
-                    <div className="text-sm">
+                    <div className="hidden xl:flex text-sm">
                       <motion.span
                         initial={{ opacity: 0, y: 20 }} // Initial state: invisible and slightly moved down
                         animate={{
@@ -189,7 +189,13 @@ export default function Home1() {
                     imageSrc={tooltipImages[icon.name]}
                     isStatic
                   >
-                    <Image src={icon.src} alt="CSS" width={50} height={50} />
+                    <Image
+                      src={icon.src}
+                      alt="CSS"
+                      width={50}
+                      height={50}
+                      className="bg-white rounded-xl"
+                    />
                   </LinkPreview>
                 </motion.div>
               ))}

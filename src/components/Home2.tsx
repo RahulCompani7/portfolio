@@ -12,7 +12,7 @@ export default function Home2() {
       title: "Experience",
       value: "Experience",
       content: (
-        <div className="w-full overflow-hidden relative min-h-screen rounded-2xl p-10 text-xl md:text-4xl font-bold text-white bg-gradient-to-br from-[#131313] to-[#090909] ">
+        <div className="w-full overflow-hidden relative min-h-screen rounded-2xl p-5 xl:p-10 text-xl md:text-4xl font-bold text-white bg-gradient-to-br from-[#131313] to-[#090909] ">
           <p>Experience</p>
           <Experience />
         </div>
@@ -22,7 +22,7 @@ export default function Home2() {
       title: "Education",
       value: "Education",
       content: (
-        <div className="w-full overflow-hidden relative min-h-screen rounded-2xl p-10 text-xl md:text-4xl font-bold text-white bg-gradient-to-br from-[#131313] to-[#090909]  ">
+        <div className="w-full overflow-hidden relative min-h-screen rounded-2xl p-5 xl:p-10 text-xl md:text-4xl font-bold text-white bg-gradient-to-br from-[#131313] to-[#090909]  ">
           <p>Education</p>
           <Education />
         </div>
@@ -31,7 +31,7 @@ export default function Home2() {
   ];
   return (
     <>
-      <div className="h-full w-full   p-20 ">
+      <div className="h-full w-full   p-4 xl:p-20 ">
         <Tabs tabs={tabs} />
         <BackgroundBeams />
       </div>

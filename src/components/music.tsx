@@ -30,7 +30,8 @@ interface SpotifyArtist {
 
 const clientId = "7d6c83f85ee04e91971d553903210241";
 const clientSecret = "38e9fb07a3d74b1288c9e577926f5e70";
-const redirectUri = "http://localhost:3000/beyondwork";
+const isHosted = true;
+const redirectUri = isHosted?"https://portfolio-git-main-rahulcompani7s-projects.vercel.app/beyondwork":"http://localhost:3000/beyondwork";
 const scopes = "user-read-private user-read-email user-top-read";
 
 export default function Music() {

@@ -1,51 +1,88 @@
-import "../styles/globals.css";
 import Link from "next/link";
-import { useRef } from "react";
+import { useRef, useState } from "react";
+import navIcon from "../assets/navicon.png";
+import Image from "next/image";
 
 export default function Navbar() {
   const contactRef = useRef<HTMLDivElement>(null);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const scrollToContact = () => {
     if (contactRef.current) {
       contactRef.current.scrollIntoView({ behavior: "smooth" });
     }
   };
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
+
   return (
     <div className="NavBar flex items-center justify-center w-full fixed top-0 left-0 z-[100]">
-      <nav
-        className="w-4/5  rounded-2xl px-4 flex items-center justify-between relative bg-black "
-        style={{ border: "0.1px solid #222222 " }}
-      >
-        <div className="nav__content w-full flex justify-between ">
+      <nav className="w-4/5 rounded-2xl px-4 flex items-center justify-between relative bg-black border border-gray-800">
+        <div className="nav__content w-full flex justify-between items-center">
           <div className="logo text-white">
             <Link href="/">Rahul Compani</Link>
           </div>
-          <span className="">
-            <label htmlFor="check" className="hidden">
-              <i className="ri-menu-line"></i>
-            </label>
-            <input type="checkbox" name="check" id="check" className="hidden" />
-            <ul className="hidden md:flex">
-              <li>
-                <Link href="/">Home</Link>
-              </li>
-              <li>
-                <Link href="/about">About</Link>
-              </li>
-              <li>
-                <Link href="/projects">Projects</Link>
-              </li>
-              <li>
-                <a href="/Resume_RahulCompani.pdf" download>
-                  Resume
-                </a>
-              </li>
-              <li>
-              <a onClick={scrollToContact} style={{ cursor: "pointer" }}>Contact</a>
-              </li>
-            </ul>
-          </span>
+          <div
+            className="menu md:hidden text-white cursor-pointer"
+            onClick={toggleMenu}
+          >
+            <Image
+              src={navIcon}
+              height="40"
+              width="40"
+              alt="menu icon"
+              className="nav-icon bg-white rounded-3xl"
+            />
+          </div>
+          <ul className="hidden md:flex space-x-4">
+            <li>
+              <Link href="/">Home</Link>
+            </li>
+            <li>
+              <Link href="/about">About</Link>
+            </li>
+            <li>
+              <Link href="/projects">Projects</Link>
+            </li>
+            <li>
+              <a href="/Resume_RahulCompani.pdf" download>
+                Resume
+              </a>
+            </li>
+            <li>
+              <a onClick={scrollToContact} style={{ cursor: "pointer" }}>
+                Contact
+              </a>
+            </li>
+          </ul>
         </div>
+        {menuOpen && (
+          <ul
+            className="absolute right-0 top-full w-1/2 bg-black text-white flex flex-col items-center space-y-4 p-4 md:hidden"
+          >
+            <li>
+              <Link href="/">Home</Link>
+            </li>
+            <li>
+              <Link href="/about">About</Link>
+            </li>
+            <li>
+              <Link href="/projects">Projects</Link>
+            </li>
+            <li>
+              <a href="/Resume_RahulCompani.pdf" download>
+                Resume
+              </a>
+            </li>
+            <li>
+              <a onClick={scrollToContact} style={{ cursor: "pointer" }}>
+                Contact
+              </a>
+            </li>
+          </ul>
+        )}
       </nav>
     </div>
   );

@@ -104,7 +104,7 @@ export default function BeyondWork() {
           </div>
           <p className="mt-4">
             I like sketching, I just take up some image and start pencil
-            sketching. It's a relaxing and creative outlet for me.
+            sketching. It&apos;s a relaxing and creative outlet for me.
           </p>
         </motion.div>
       </section>

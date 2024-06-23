@@ -47,21 +47,17 @@ export default function Navbar() {
               <Link href="/projects">Projects</Link>
             </li>
             <li>
-              <a href="/Resume_RahulCompani.pdf" download>
-                Resume
-              </a>
+              <Link href="/beyondwork">Beyond Work</Link>
             </li>
             <li>
-              <a onClick={scrollToContact} style={{ cursor: "pointer" }}>
-                Contact
+              <a href="/Resume_RahulCompani.pdf" download>
+                Resume
               </a>
             </li>
           </ul>
         </div>
         {menuOpen && (
-          <ul
-            className="absolute right-0 top-full w-1/2 bg-black text-white flex flex-col items-center space-y-4 p-4 md:hidden"
-          >
+          <ul className="absolute rounded-xl right-0 top-full w-1/2 bg-black text-white flex flex-col items-center space-y-4 p-2 pb-4 md:hidden">
             <li>
               <Link href="/">Home</Link>
             </li>
@@ -72,13 +68,11 @@ export default function Navbar() {
               <Link href="/projects">Projects</Link>
             </li>
             <li>
-              <a href="/Resume_RahulCompani.pdf" download>
-                Resume
-              </a>
+              <Link href="/beyondwork">Beyond Work</Link>
             </li>
             <li>
-              <a onClick={scrollToContact} style={{ cursor: "pointer" }}>
-                Contact
+              <a href="/Resume_RahulCompani.pdf" download>
+                Resume
               </a>
             </li>
           </ul>

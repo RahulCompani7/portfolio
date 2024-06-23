@@ -96,6 +96,7 @@ export default function Music() {
 
     const refreshAccessToken = async () => {
       try {
+        console.log("Refreshing access token...");
         const refreshResponse = await axios.post(
           "https://accounts.spotify.com/api/token",
           new URLSearchParams({
@@ -124,9 +125,13 @@ export default function Music() {
 
     // Check if access token exists in local storage
     if (storedAccessToken) {
+      console.log("Access token found in localStorage:", storedAccessToken);
       setAccessToken(storedAccessToken);
       fetchData(storedAccessToken); // Fetch data directly if access token exists
     } else {
+      console.log(
+        "No access token found, redirecting to Spotify authorization..."
+      );
       // Redirect to Spotify authorization
       authorizeSpotify();
     }

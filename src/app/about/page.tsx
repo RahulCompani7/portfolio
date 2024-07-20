@@ -1,6 +1,6 @@
 "use client";
 import { useRef } from "react";
-import { useInView } from "framer-motion";
+
 import { FaLinkedin, FaGithub, FaTwitter, FaInstagram } from "react-icons/fa";
 import Image from "next/image";
 import profile from "../../assets/Blob.png";
@@ -31,6 +31,7 @@ import { BackgroundBeams } from "@/components/ui/background-beams";
 import { Tabs } from "@/components/ui/tabs";
 import aboutlogo from "../../assets/About.png";
 import "../../styles/globals.css";
+import useInView from "../../components/hooks/useInView";
 import { LinkPreview } from "@/components/ui/link-preview";
 import Home2 from "@/components/Home2";
 
@@ -60,9 +61,9 @@ export default function About() {
   const descriptionRef = useRef(null);
   const skillsRef = useRef(null);
 
-  const titleInView = useInView(titleRef, { triggerOnce: true });
-  const descriptionInView = useInView(descriptionRef, { triggerOnce: true });
-  const skillsInView = useInView(skillsRef, { triggerOnce: true });
+  const [setTitleRef, titleInView] = useInView({ threshold: 0.1 });
+  const [setDescriptionRef, descriptionInView] = useInView({ threshold: 0.1 });
+  const [setSkillsRef, skillsInView] = useInView({ threshold: 0.1 });
 
   return (
     <div className="p-2 pb-10">

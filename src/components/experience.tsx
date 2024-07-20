@@ -70,12 +70,18 @@ export default function Experience() {
               </li>
             </ul>
             <div className="mt-4 text-gray-400 text-sm flex flex-wrap">
-              <span className="border rounded-xl px-4 py-2 m-2">Next.js</span>
-              <span className="border rounded-xl px-4 py-2 m-2">
+              <span className="border rounded-xl px-4 py-2 m-2 hover:border-blue-500 hover:shadow-lg hover:shadow-blue-500/50 hover:scale-105 transition-transform duration-300">
+                Next.js
+              </span>
+              <span className="border rounded-xl px-4 py-2 m-2 hover:border-blue-500 hover:shadow-lg hover:shadow-blue-500/50 hover:scale-105 transition-transform duration-300">
                 TypeScript
               </span>
-              <span className="border rounded-xl px-4 py-2 m-2">Node.js</span>
-              <span className="border rounded-xl px-4 py-2 m-2">MongoDB</span>
+              <span className="border rounded-xl px-4 py-2 m-2 hover:border-blue-500 hover:shadow-lg hover:shadow-blue-500/50 hover:scale-105 transition-transform duration-300">
+                Node.js
+              </span>
+              <span className="border rounded-xl px-4 py-2 m-2 hover:border-blue-500 hover:shadow-lg hover:shadow-blue-500/50 hover:scale-105 transition-transform duration-300">
+                MongoDB
+              </span>
             </div>
           </div>
         </div>
@@ -122,13 +128,16 @@ export default function Experience() {
                 informative charts.
               </li>
               <li>
-                Integrated Google Cloud&apos;s Natural Language API for sentiment
-                analysis, improving the accuracy of assessments by 20%.
+                Integrated Google Cloud&apos;s Natural Language API for
+                sentiment analysis, improving the accuracy of assessments by
+                20%.
               </li>
             </ul>
             <div className="mt-4 text-gray-400 text-sm flex flex-wrap">
-              <span className="border rounded-xl px-4 py-2 m-2">React.js</span>
-              <span className="border rounded-xl px-4 py-2 m-2">
+              <span className="border rounded-xl px-4 py-2 m-2 hover:border-blue-500 hover:shadow-lg hover:shadow-blue-500/50 hover:scale-105 transition-transform duration-300">
+                React.js
+              </span>
+              <span className="border rounded-xl px-4 py-2 m-2 hover:border-blue-500 hover:shadow-lg hover:shadow-blue-500/50 hover:scale-105 transition-transform duration-300">
                 Google Cloud Natural Language API
               </span>
             </div>
@@ -184,12 +193,16 @@ export default function Experience() {
               </li>
             </ul>
             <div className="mt-4 text-gray-400 text-sm flex flex-wrap">
-              <span className="border rounded-xl px-4 py-2 m-2">
+              <span className="border rounded-xl px-4 py-2 m-2 hover:border-blue-500 hover:shadow-lg hover:shadow-blue-500/50 hover:scale-105 transition-transform duration-300">
                 Automation
               </span>
-              <span className="border rounded-xl px-4 py-2 m-2">RPA</span>
-              <span className="border rounded-xl px-4 py-2 m-2">UiPath</span>
-              <span className="border rounded-xl px-4 py-2 m-2">
+              <span className="border rounded-xl px-4 py-2 m-2 hover:border-blue-500 hover:shadow-lg hover:shadow-blue-500/50 hover:scale-105 transition-transform duration-300">
+                RPA
+              </span>
+              <span className="border rounded-xl px-4 py-2 m-2 hover:border-blue-500 hover:shadow-lg hover:shadow-blue-500/50 hover:scale-105 transition-transform duration-300">
+                UiPath
+              </span>
+              <span className="border rounded-xl px-4 py-2 m-2 hover:border-blue-500 hover:shadow-lg hover:shadow-blue-500/50 hover:scale-105 transition-transform duration-300">
                 Form Validation
               </span>
             </div>

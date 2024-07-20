@@ -14,6 +14,7 @@ import { CardBody, CardContainer, CardItem } from "../components/ui/3d-card";
 import { motion } from "framer-motion";
 import Navbar from "@/components/Nav";
 import { BackgroundBeams } from "@/components/ui/background-beams";
+import { BoxesCore } from "./ui/background-boxes";
 
 import "../styles/globals.css";
 import { LinkPreview } from "@/components/ui/link-preview";
@@ -202,7 +203,6 @@ export default function Home1() {
             </div>
           </div>
         </div>
-        <BackgroundBeams />
       </div>
     </>
   );

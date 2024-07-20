@@ -71,7 +71,7 @@ export default function BeyondWork() {
         </motion.div>
       </section>
 
-      <Music />
+      {/* <Music /> */}
 
       <section className="art" ref={setRef}>
         <motion.div

@@ -3,6 +3,7 @@
 import Experience from "./experience";
 import Education from "./Education";
 import { BackgroundBeams } from "@/components/ui/background-beams";
+import { BoxesCore } from "./ui/background-boxes";
 
 import "../styles/globals.css";
 import { Tabs } from "./ui/tabs";

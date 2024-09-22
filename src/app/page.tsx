@@ -17,6 +17,7 @@ import Home1 from "@/components/Home";
 import "../styles/globals.css";
 import { LinkPreview } from "@/components/ui/link-preview";
 import { BoxesCore } from "../components/ui/background-boxes";
+import { BackgroundBeamsWithCollision } from "@/components/ui/background-beams-with-collision";
 
 export default function Home() {
   const words = ["a Web Developer", "a Tech Enthusiast"];
@@ -70,11 +71,11 @@ export default function Home() {
 
   return (
     <>
-      <Navbar />
+      <BackgroundBeamsWithCollision>
+        <Navbar />
 
-      <Home1 />
-
-      <BoxesCore />
+        <Home1 />
+      </BackgroundBeamsWithCollision>
     </>
   );
 }

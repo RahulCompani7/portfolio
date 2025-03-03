@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-import profile from "../assets/Blob.png";
+import profile from "../assets/Blob2.png";
 import { FlipWords } from "../components/ui/flip-words";
 import { CardBody, CardContainer, CardItem } from "../components/ui/3d-card";
 import { motion } from "framer-motion";
@@ -16,6 +16,7 @@ import {
 import useInView from "./hooks/useInView";
 import "../styles/globals.css";
 import { Poller_One } from "next/font/google";
+import { ColourfulText } from "./ui/colorfultext";
 
 const pollerOne = Poller_One({
   weight: "400",
@@ -96,8 +97,8 @@ export default function Home1() {
         animate={isInView ? "animate" : "initial"}
         variants={variants}
       >
-        <p className="subtitle text-5xl">HELLO</p>
-        <h1 className={`title text-7xl md:text-8xl`}>
+        <p className="subtitle text-5xl ">HELLO</p>
+        <h1 className={`title text-7xl md:text-8xl text-black`}>
           I&apos;m{" "}
           <span className="title text-7xl md:text-8xl">
             <span
@@ -106,8 +107,9 @@ export default function Home1() {
               } ${pollerOne.className}`}
               ref={setRef}
             >
-              Rahul
+              
             </span>
+            <ColourfulText text="Rahul" />
             <br />
             <FlipWords
               words={words}
@@ -126,33 +128,23 @@ export default function Home1() {
       <div className="flex justify-center items-center flex-col xl:mt-0 z-[100] ">
         <CardContainer>
           <CardBody>
-            <CardItem translateZ="1" className="w-full">
+            <CardItem translateZ="1" className="w-full flex justify-center items-center">
               <motion.div
                 initial="initial"
                 animate={isInView ? "animate" : "initial"}
                 variants={imageVariants}
                 className="Profileimage"
               >
-                <div className="flex flex-col items-center">
-                  <Image
-                    src={profile}
-                    height="400"
-                    width="400"
-                    className="transform transition hover:translate-y-2 hover:scale-110 duration-300"
-                    alt="thumbnail"
-                  />
-                  <div className="hidden xl:flex text-sm">
-                    <motion.span
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{
-                        opacity: isInView ? 1 : 0,
-                        y: isInView ? 0 : 20,
-                      }}
-                      transition={{ duration: 0.5 }}
-                    >
-                      Hover Me
-                    </motion.span>
-                  </div>
+                <div className="flex flex-col justify-center items-center">
+                <Image
+  src={profile}
+  height="300"
+  width="300"
+  className="rounded-full object-cover aspect-square transform transition hover:translate-y-2 hover:scale-110 duration-300"
+  alt="thumbnail"
+/>
+
+                  
                 </div>
               </motion.div>
             </CardItem>

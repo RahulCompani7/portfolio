@@ -19,7 +19,7 @@ export default function Navbar() {
 
   return (
     <div className="NavBar flex items-center justify-center w-full fixed top-0 left-0 z-[100]">
-      <nav className="w-4/5 rounded-2xl px-4 flex items-center justify-between relative bg-black border border-gray-800">
+      <nav className="w-4/5 rounded-2xl px-4 flex items-center justify-between relative bg-[#eeeeee] border border-gray-800">
         <div className="nav__content w-full flex justify-between items-center">
           <div className="logo text-white">
             <Link href="/">Rahul Compani</Link>

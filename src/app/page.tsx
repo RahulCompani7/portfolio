@@ -8,6 +8,7 @@ import linkedinLogo from "../assets/linkedin.png";
 import instagramLogo from "../assets/instagram.png";
 import xLogo from "../assets/twitter.png";
 import gmailLogo from "../assets/gmail.png";
+
 import { FlipWords } from "../components/ui/flip-words";
 import { CardBody, CardContainer, CardItem } from "../components/ui/3d-card";
 import { motion } from "framer-motion";

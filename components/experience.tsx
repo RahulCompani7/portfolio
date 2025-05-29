@@ -9,8 +9,9 @@ import { Badge } from "@/components/ui/badge"
 export default function Experience() {
   const ref = useRef<HTMLDivElement>(null)
   const testimonialsRef = useRef<HTMLDivElement>(null)
-  const isInView = useInView(ref, { once: false, amount: 0.2 })
-  const testimonialsInView = useInView(testimonialsRef, { once: false, amount: 0.1 })
+const isInView = useInView(ref, { once: true, amount: 0.2 })
+const testimonialsInView = useInView(testimonialsRef, { once: true, amount: 0.1 })
+
 
   const experiences = [
     {
@@ -27,7 +28,7 @@ export default function Experience() {
         "Mentored interns and collaborated in Agile/Scrum environment",
       ],
       skills: ["React.js", "Next.js", "Node.js", "MongoDB", "TypeScript", "Docker", "AWS"],
-      logo: "https://images.unsplash.com/photo-1560179707-f14e90ef3623?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80",
+      logo: "https://media.licdn.com/dms/image/v2/D4E0BAQG6v9wMkNg5bA/company-logo_200_200/company-logo_200_200/0/1701914172156/sustally_logo?e=2147483647&v=beta&t=kVGj6ZY1UiR4qzQrVRLyvnTEidTx6AdVEkWLMtvQ1dg",
     },
     {
       title: "Full Stack Developer",
@@ -42,7 +43,7 @@ export default function Experience() {
         "Improved assessment accuracy by 20% through AI integration",
       ],
       skills: ["React.js", "Node.js", "MongoDB", "Google Cloud API", "Express.js"],
-      logo: "https://images.unsplash.com/photo-1560179707-f14e90ef3623?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80",
+      logo: "https://media.licdn.com/dms/image/v2/D4E0BAQG6v9wMkNg5bA/company-logo_200_200/company-logo_200_200/0/1701914172156/sustally_logo?e=2147483647&v=beta&t=kVGj6ZY1UiR4qzQrVRLyvnTEidTx6AdVEkWLMtvQ1dg",
     },
     {
       title: "RPA Developer",
@@ -57,7 +58,7 @@ export default function Experience() {
         "Collaborated in Agile environment using Jira for project management",
       ],
       skills: ["UiPath", "RPA", "XML", "JSON", "Automation", "Jira"],
-      logo: "https://images.unsplash.com/photo-1560179707-f14e90ef3623?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80",
+      logo: "https://images.credly.com/images/7c1f749c-4acb-4ff8-ac1b-02ce2bc331e5/blob.png",
     },
     {
       title: "Freelance Web Developer",

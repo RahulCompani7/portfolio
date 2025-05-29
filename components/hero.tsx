@@ -7,6 +7,8 @@ import { Github, Linkedin, Instagram, Twitter, ArrowDown, Sparkles } from "lucid
 import { FlipWords } from "@/components/ui/flip-words"
 import { ShimmerButton } from "@/components/ui/shimmer-button"
 import { MovingBorder } from "@/components/ui/moving-border"
+import Photo from "../public/Photo.jpg"
+import Image from "next/image";
 
 export default function Hero() {
   const ref = useRef<HTMLDivElement>(null)
@@ -37,7 +39,7 @@ export default function Hero() {
   const socialLinks = [
     {
       name: "GitHub",
-      url: "https://github.com/rahulcompani",
+      url: "https://github.com/rahulcompani7",
       icon: <Github className="h-5 w-5" />,
       color: "hover:text-gray-900",
     },
@@ -183,32 +185,43 @@ export default function Hero() {
               className="relative"
             >
               <MovingBorder duration={3000} className="w-80 h-80">
-                <div className="w-full h-full rounded-full overflow-hidden bg-gradient-to-br from-blue-100 to-pink-100 p-2 relative">
-                  <motion.img
-                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80"
-                    alt="Rahul Compani"
-                    className="w-full h-full object-cover rounded-full transition-all duration-500"
-                    animate={imageHovered ? { scale: 1.1 } : { scale: 1 }}
-                  />
+                
 
-                  {/* Hover overlay */}
-                  <motion.div
-                    className="absolute inset-0 bg-gradient-to-t from-blue-600/20 to-transparent rounded-full flex items-center justify-center"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: imageHovered ? 1 : 0 }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    <motion.div
-                      initial={{ scale: 0 }}
-                      animate={{ scale: imageHovered ? 1 : 0 }}
-                      transition={{ duration: 0.3, delay: 0.1 }}
-                      className="text-white text-center"
-                    >
-                      <Sparkles className="h-8 w-8 mx-auto mb-2" />
-                      <p className="text-sm font-medium">Let's Connect!</p>
-                    </motion.div>
-                  </motion.div>
-                </div>
+<div className="w-80 h-80 rounded-full overflow-hidden bg-gradient-to-br from-blue-100 to-pink-100 p-2 relative">
+  <motion.div
+    className="relative w-full h-full rounded-full overflow-hidden"
+    animate={imageHovered ? { scale: 1.1 } : { scale: 1 }}
+    transition={{ duration: 0.5 }}
+  >
+    <Image
+      src={Photo}
+      alt="Rahul Compani"
+      className="object-cover rounded-full"
+      fill
+      priority
+     
+    />
+  </motion.div>
+
+  {/* Hover overlay */}
+  <motion.div
+    className="absolute inset-0 bg-gradient-to-t from-blue-600/20 to-transparent rounded-full flex items-center justify-center pointer-events-none"
+    initial={{ opacity: 0 }}
+    animate={{ opacity: imageHovered ? 1 : 0 }}
+    transition={{ duration: 0.3 }}
+  >
+    <motion.div
+      initial={{ scale: 0 }}
+      animate={{ scale: imageHovered ? 1 : 0 }}
+      transition={{ duration: 0.3, delay: 0.1 }}
+      className="text-white text-center"
+    >
+      <Sparkles className="h-8 w-8 mx-auto mb-2" />
+      <p className="text-sm font-medium">Let's Connect!</p>
+    </motion.div>
+  </motion.div>
+</div>
+
               </MovingBorder>
 
               {/* Floating elements around image */}

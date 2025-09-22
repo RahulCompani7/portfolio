@@ -14,10 +14,27 @@ const testimonialsInView = useInView(testimonialsRef, { once: true, amount: 0.1 
 
 
   const experiences = [
+   {
+  title: "Software Development Engineer",
+  company: "TechMonk (SaaS Startup)",
+  period: "JUN 2025 - PRESENT",
+  location: "Remote",
+  type: "Full-time",
+  description: [
+    "Worked on the main SaaS product, building backend systems with Node.js, MongoDB, and Google Cloud Platform, directly shaping client engagement workflows",
+    "Developed Agent Builder, allowing users to design agent flows, assign agents/tools, and deploy bots to handle product queries, improving self-service resolution by 35%",
+    "Designed and launched Exotel integration from scratch, powering voice calls and SMS within the ticketing system, enabling agents to resolve customer issues 30% faster across phone, email, and WhatsApp",
+    "Revamped the lead management platform, allowing admins to create multiple categorized forms with round-robin lead assignment, boosting lead distribution efficiency by 40%",
+    "Fixed critical production bugs, implemented modular utility functions, improving maintainability and reducing recurring issues by 25%"
+  ],
+  skills: ["JavaScript", "TypeScript", "Node.js", "MongoDB", "Express.js", "Postman", "Git", "Docker", "AWS", "JWT", "Redis", "GCP", "Indexing", "Cron"],
+  logo: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fin.linkedin.com%2Fcompany%2Ftechmonk-io&psig=AOvVaw3issWf8fVEi85Ulkiy_mQ4&ust=1758607798523000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCPCN3Nza648DFQAAAAAdAAAAABAE"
+}
+,
     {
       title: "Software Developer",
       company: "Sustally (SaaS Startup)",
-      period: "DEC 2023 - FEB 2025",
+      period: "OCT 2023 - FEB 2025",
       location: "Remote",
       type: "Full-time",
       description: [
@@ -28,21 +45,6 @@ const testimonialsInView = useInView(testimonialsRef, { once: true, amount: 0.1 
         "Mentored interns and collaborated in Agile/Scrum environment",
       ],
       skills: ["React.js", "Next.js", "Node.js", "MongoDB", "TypeScript", "Docker", "AWS"],
-      logo: "https://media.licdn.com/dms/image/v2/D4E0BAQG6v9wMkNg5bA/company-logo_200_200/company-logo_200_200/0/1701914172156/sustally_logo?e=2147483647&v=beta&t=kVGj6ZY1UiR4qzQrVRLyvnTEidTx6AdVEkWLMtvQ1dg",
-    },
-    {
-      title: "Full Stack Developer",
-      company: "Sustally (SaaS Startup)",
-      period: "OCT 2023 - DEC 2023",
-      location: "Remote",
-      type: "Contract",
-      description: [
-        "Developed questionnaire-based assessment platform",
-        "Integrated Google Cloud's Natural Language API for sentiment analysis",
-        "Built shareable assessment links with progress tracking charts",
-        "Improved assessment accuracy by 20% through AI integration",
-      ],
-      skills: ["React.js", "Node.js", "MongoDB", "Google Cloud API", "Express.js"],
       logo: "https://media.licdn.com/dms/image/v2/D4E0BAQG6v9wMkNg5bA/company-logo_200_200/company-logo_200_200/0/1701914172156/sustally_logo?e=2147483647&v=beta&t=kVGj6ZY1UiR4qzQrVRLyvnTEidTx6AdVEkWLMtvQ1dg",
     },
     {

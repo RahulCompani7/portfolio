@@ -28,7 +28,7 @@ const testimonialsInView = useInView(testimonialsRef, { once: true, amount: 0.1 
     "Fixed critical production bugs, implemented modular utility functions, improving maintainability and reducing recurring issues by 25%"
   ],
   skills: ["JavaScript", "TypeScript", "Node.js", "MongoDB", "Express.js", "Postman", "Git", "Docker", "AWS", "JWT", "Redis", "GCP", "Indexing", "Cron"],
-  logo: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fin.linkedin.com%2Fcompany%2Ftechmonk-io&psig=AOvVaw3issWf8fVEi85Ulkiy_mQ4&ust=1758607798523000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCPCN3Nza648DFQAAAAAdAAAAABAE"
+  logo: "https://media.licdn.com/dms/image/v2/D560BAQHOodZXSMdw1A/company-logo_200_200/company-logo_200_200/0/1716479700444/techmonk_io_logo?e=2147483647&v=beta&t=X1VYFKgP-SOURVGfF9UbBubB4Zm7CKepm6CgBpKZWpE"
 }
 ,
     {
@@ -117,67 +117,70 @@ const testimonialsInView = useInView(testimonialsRef, { once: true, amount: 0.1 
           </p>
         </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-          transition={{ duration: 1, delay: 0.2 }}
-          className="mb-20"
-        >
-          <VerticalTimeline
-            items={experiences.map((exp, index) => ({
-              title: exp.title,
-              subtitle: exp.company,
-              date: exp.period,
-              content: (
-                <motion.div className="space-y-4" whileHover={{ scale: 1.01 }} transition={{ duration: 0.2 }}>
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="flex items-center space-x-3">
-                      <motion.img
-                        src={exp.logo || "/placeholder.svg"}
-                        alt={exp.company}
-                        className="w-10 h-10 rounded-full object-cover cursor-pointer"
-                        whileHover={{ scale: 1.1, rotate: 5 }}
-                      />
-                      <div>
-                        <h3 className="font-bold text-lg text-neutral-900">{exp.title}</h3>
-                        <p className="text-neutral-600">{exp.company}</p>
-                      </div>
-                    </div>
-                    <Badge variant={exp.type === "Full-time" ? "default" : "secondary"}>{exp.type}</Badge>
-                  </div>
+      <motion.div
+  initial={{ opacity: 0, y: 30 }}
+  animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+  transition={{ duration: 1, delay: 0.2 }}
+  className="mb-20"
+>
+  <VerticalTimeline
+    items={experiences.map((exp, index) => ({
+      // Remove title/subtitle from VerticalTimeline props
+      date: exp.period,
+      content: (
+        <motion.div className="space-y-4" whileHover={{ scale: 1.01 }} transition={{ duration: 0.2 }}>
+          {/* Single-line header */}
+          <div className="flex items-center justify-between mb-4 space-x-3">
+            <motion.img
+              src={exp.logo || "/placeholder.svg"}
+              alt={exp.company}
+              className="w-10 h-10 rounded-full object-cover cursor-pointer"
+              whileHover={{ scale: 1.1, rotate: 5 }}
+            />
+            <div className="flex-1 flex items-center justify-between">
+              <div className="font-bold text-neutral-900">
+                {exp.title} @ {exp.company}
+              </div>
+              <Badge variant={exp.type === "Full-time" ? "default" : "secondary"}>{exp.type}</Badge>
+            </div>
+          </div>
 
-                  <p className="text-sm text-neutral-500 mb-4">{exp.location}</p>
+          {/* Location below header */}
+          <p className="text-sm text-neutral-500 mb-4">{exp.location}</p>
 
-                  <ul className="space-y-2">
-                    {exp.description.map((item, idx) => (
-                      <motion.li
-                        key={idx}
-                        className="text-neutral-700 text-sm leading-relaxed cursor-default"
-                        whileHover={{ x: 5, color: "#059669" }}
-                        transition={{ duration: 0.2 }}
-                      >
-                        • {item}
-                      </motion.li>
-                    ))}
-                  </ul>
+          {/* Description */}
+          <ul className="space-y-2">
+            {exp.description.map((item, idx) => (
+              <motion.li
+                key={idx}
+                className="text-neutral-700 text-sm leading-relaxed cursor-default"
+                whileHover={{ x: 5, color: "#059669" }}
+                transition={{ duration: 0.2 }}
+              >
+                • {item}
+              </motion.li>
+            ))}
+          </ul>
 
-                  <div className="pt-4 border-t border-neutral-200">
-                    <div className="flex flex-wrap gap-2">
-                      {exp.skills.map((skill, idx) => (
-                        <motion.div key={idx} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                          <Badge variant="outline" className="text-xs cursor-pointer">
-                            {skill}
-                          </Badge>
-                        </motion.div>
-                      ))}
-                    </div>
-                  </div>
+          {/* Skills */}
+          <div className="pt-4 border-t border-neutral-200">
+            <div className="flex flex-wrap gap-2">
+              {exp.skills.map((skill, idx) => (
+                <motion.div key={idx} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                  <Badge variant="outline" className="text-xs cursor-pointer">
+                    {skill}
+                  </Badge>
                 </motion.div>
-              ),
-              icon: <div className="w-3 h-3 bg-gradient-to-r from-green-500 to-yellow-500 rounded-full" />,
-            }))}
-          />
+              ))}
+            </div>
+          </div>
         </motion.div>
+      ),
+      icon: <div className="w-3 h-3 bg-gradient-to-r from-green-500 to-yellow-500 rounded-full" />,
+    }))}
+  />
+</motion.div>
+
 
         <motion.div
           ref={testimonialsRef}

@@ -1,9 +1,9 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
-import { portfolioData } from "@/lib/data";
+import { portfolioData, contactInfo } from "@/lib/data";
 
-export default function Terminal() {
+export default function Terminal({ onToggleTheme }: { onToggleTheme?: () => void }) {
   const [cmd, setCmd] = useState("");
   const [lines, setLines] = useState([
     { text: "rahul-cv v2.0 — an interactive résumé shell.", color: "var(--dim)" },
@@ -18,30 +18,55 @@ export default function Terminal() {
     termRef.current?.scrollTo(0, termRef.current.scrollHeight);
   }, [lines]);
 
-  const runCommand = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!cmd.trim()) return;
+  const execute = (raw: string) => {
+    const command = raw.trim().toLowerCase();
+    if (!command) return;
 
-    const command = cmd.trim().toLowerCase();
-    setHistory([...history, command]);
+    setHistory((prev) => [...prev, command]);
     setHistIdx(-1);
+    setCmd("");
 
-    setLines((prev) => [...prev, { text: `rahul@portfolio ~ % ${cmd}`, color: "var(--acc)" }]);
-
-    const output = portfolioData.terminalCommands[command as keyof typeof portfolioData.terminalCommands] || "command not found";
+    // Echo the prompt line first.
+    setLines((prev) => [...prev, { text: `rahul@portfolio ~ % ${command}`, color: "var(--acc)" }]);
 
     if (command === "clear") {
       setLines([]);
-    } else if (output) {
-      setLines((prev) => [...prev, { text: output, color: "var(--text)" }]);
-    } else {
-      setLines((prev) => [...prev, { text: `command not found: ${command}`, color: "#ff5f56" }]);
+      return;
     }
 
-    setCmd("");
+    if (command === "theme") {
+      onToggleTheme?.();
+      setLines((prev) => [...prev, { text: portfolioData.terminalCommands.theme, color: "var(--text)" }]);
+      return;
+    }
+
+    if (command === "resume") {
+      const a = document.createElement("a");
+      a.href = contactInfo.resume;
+      a.download = "Rahul_Compani_Resume.pdf";
+      a.click();
+      setLines((prev) => [...prev, { text: portfolioData.terminalCommands.resume, color: "var(--text)" }]);
+      return;
+    }
+
+    const output = portfolioData.terminalCommands[command as keyof typeof portfolioData.terminalCommands];
+
+    if (output) {
+      setLines((prev) => [...prev, { text: output, color: "var(--text)" }]);
+    } else {
+      setLines((prev) => [
+        ...prev,
+        { text: `command not found: ${command} — type \`help\` for the full list`, color: "#ff5f56" },
+      ]);
+    }
   };
 
-  const suggestions = ["experience", "projects", "skills", "education", "contact", "about", "help"];
+  const runCommand = (e: React.FormEvent) => {
+    e.preventDefault();
+    execute(cmd);
+  };
+
+  const suggestions = ["about", "experience", "projects", "skills", "education", "contact", "resume", "help"];
 
   return (
     <section id="terminal" style={{ maxWidth: "940px", margin: "0 auto", padding: "20px 24px 130px", position: "relative", zIndex: 1 }}>
@@ -124,7 +149,7 @@ export default function Terminal() {
             <button
               key={i}
               onClick={() => {
-                setCmd(sg);
+                execute(sg);
                 inputRef.current?.focus();
               }}
               className="chip"

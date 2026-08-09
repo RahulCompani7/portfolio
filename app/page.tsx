@@ -73,7 +73,7 @@ export default function Home() {
       <Projects />
       <Skills />
       <Education />
-      <Terminal />
+      <Terminal onToggleTheme={toggleTheme} />
       <Contact />
       <Footer />
     </div>

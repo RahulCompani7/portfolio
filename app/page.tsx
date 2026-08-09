@@ -24,12 +24,13 @@ function useMounted() {
   return useSyncExternalStore(subscribeNoop, () => true, () => false);
 }
 
+// Light is the default; only an explicitly saved "dark" preference overrides it.
 function getInitialTheme(): "light" | "dark" {
-  if (typeof window === "undefined") return "dark";
+  if (typeof window === "undefined") return "light";
   try {
-    return (localStorage.getItem("rc_theme") as "light" | "dark") || "dark";
+    return localStorage.getItem("rc_theme") === "dark" ? "dark" : "light";
   } catch {
-    return "dark";
+    return "light";
   }
 }
 

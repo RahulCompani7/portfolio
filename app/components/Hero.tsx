@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import { portfolioData } from "@/lib/data";
 
 export default function Hero() {
@@ -133,11 +134,16 @@ export default function Hero() {
         <div className="hero-photo" style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "22px" }}>
           <div data-tilt="1" style={{ position: "relative", width: "268px", height: "268px", flex: "none" }}>
             <div style={{ position: "absolute", inset: "-2px", borderRadius: "30px", background: "conic-gradient(from var(--ang, 0deg), var(--acc), transparent 30%, var(--acc2) 55%, transparent 80%, var(--acc))", animation: "hue 9s linear infinite" }} />
-            <img
-              src="/profile.jpeg"
-              alt="Rahul Compani"
-              style={{ position: "absolute", inset: "4px", width: "calc(100% - 8px)", height: "calc(100% - 8px)", borderRadius: "27px", objectFit: "cover", border: "2px solid var(--bg)" }}
-            />
+            <div style={{ position: "absolute", inset: "4px", borderRadius: "27px", overflow: "hidden", border: "2px solid var(--bg)" }}>
+              <Image
+                src="/profile.jpeg"
+                alt="Rahul Compani"
+                fill
+                sizes="268px"
+                priority
+                style={{ objectFit: "cover" }}
+              />
+            </div>
             <div style={{ position: "absolute", bottom: "-13px", left: "50%", transform: "translateX(-50%)", background: "var(--bg)", border: "1px solid var(--line2)", padding: "7px 15px", borderRadius: "999px", fontSize: "11px", fontWeight: 600, fontFamily: "'JetBrains Mono', monospace", color: "var(--acc)", whiteSpace: "nowrap" }}>
               Hyderabad, India
             </div>
@@ -146,8 +152,8 @@ export default function Hero() {
           <div data-tilt="1" style={{ width: "100%", maxWidth: "296px", background: "var(--panel)", border: "1px solid var(--line2)", borderRadius: "20px", padding: "20px", position: "relative", overflow: "hidden" }}>
             <div style={{ position: "absolute", top: 0, left: 0, width: "3px", height: "100%", background: "#ffe600" }} />
             <div style={{ display: "flex", alignItems: "center", gap: "11px", marginBottom: "13px", position: "relative" }}>
-              <div style={{ width: "40px", height: "40px", borderRadius: "10px", background: "#fff", display: "grid", placeItems: "center", flex: "none", overflow: "hidden", border: "1px solid var(--line)" }}>
-                <img src="/ey.png" alt="EY" style={{ width: "100%", height: "100%", objectFit: "contain" }} />
+              <div style={{ position: "relative", width: "40px", height: "40px", borderRadius: "10px", background: "#fff", display: "grid", placeItems: "center", flex: "none", overflow: "hidden", border: "1px solid var(--line)" }}>
+                <Image src="/ey.png" alt="EY" fill sizes="40px" style={{ objectFit: "contain" }} />
               </div>
               <div>
                 <div style={{ fontSize: "9.5px", fontWeight: 800, letterSpacing: "0.14em", color: "var(--dim)", textTransform: "uppercase" }}>

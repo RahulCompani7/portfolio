@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { portfolioData } from "@/lib/data";
 
 export default function Projects() {
@@ -33,11 +34,13 @@ export default function Projects() {
           >
             <div style={{ height: "230px", background: "var(--panel2)", position: "relative", overflow: "hidden", borderBottom: "1px solid var(--line)" }}>
               {p.shot && (
-                <img
+                <Image
                   src={p.shot}
                   alt={`${p.title} screenshot`}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
                   loading="lazy"
-                  style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top center" }}
+                  style={{ objectFit: "cover", objectPosition: "top center" }}
                 />
               )}
             </div>

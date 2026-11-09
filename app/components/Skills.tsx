@@ -3,6 +3,7 @@
 import { portfolioData } from "@/lib/data";
 import { skillIconSrc } from "@/lib/icons";
 import LogoTile from "./LogoTile";
+import GithubPanel from "./GithubPanel";
 
 export default function Skills() {
   return (
@@ -53,6 +54,12 @@ export default function Skills() {
             </div>
           </div>
         ))}
+      </div>
+
+      {/* Measured counterpart to the chips above: real language volumes,
+          commit cadence and repositories, pulled live from GitHub. */}
+      <div className="rv" style={{ marginTop: "34px" }}>
+        <GithubPanel />
       </div>
     </section>
   );

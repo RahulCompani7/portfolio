@@ -74,7 +74,7 @@ export default function Contact() {
       <div className="contact-grid padbox" style={{ background: "var(--panel)", border: "1px solid var(--line)", borderRadius: "26px", padding: "50px", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "48px", position: "relative", overflow: "hidden" }}>
         <div>
           <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "11.5px", fontWeight: 600, letterSpacing: "0.16em", color: "var(--acc)", textTransform: "uppercase", marginBottom: "16px" }}>
-            07 — Contact
+            09 — Contact
           </div>
           <h2 style={{ fontFamily: "'Bricolage Grotesque', sans-serif", fontSize: "clamp(27px, 3.6vw, 42px)", fontWeight: 800, letterSpacing: "-0.035em", margin: "0 0 18px", color: "var(--head)", lineHeight: 1.05 }}>
             Let&apos;s build something worth shipping.

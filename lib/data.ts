@@ -1,3 +1,5 @@
+import { snapshotHandle } from "./instagram";
+
 const roles = ["scalable SaaS platforms", "serverless cloud systems", "fast, modern web apps", "APIs that don't break"];
 
 const marquee = [
@@ -161,8 +163,10 @@ const menuItems = [
   { label: "Work", href: "#projects", num: "03" },
   { label: "Skills", href: "#skills", num: "04" },
   { label: "Education", href: "#education", num: "05" },
-  { label: "Ask me", href: "#terminal", num: "06" },
-  { label: "Contact", href: "#contact", num: "07" },
+  { label: "Photos", href: "#photography", num: "06" },
+  { label: "Music", href: "#music", num: "07" },
+  { label: "Ask me", href: "#terminal", num: "08" },
+  { label: "Contact", href: "#contact", num: "09" },
 ];
 
 export const contactInfo = {
@@ -188,6 +192,7 @@ const terminalCommands = {
     "  projects     what I've built, with links",
     "  skills       the stack, grouped",
     "  education    degrees and scores",
+    "  photography  frames I've shot",
     "  awards       recognition and rankings",
     "  certs        certifications",
     "  contact      email, phone and socials",
@@ -227,6 +232,15 @@ const terminalCommands = {
   education: education
     .map((e) => [e.degree, e.school, `${e.period} · ${e.detail}`].join("\n"))
     .join("\n\n"),
+
+  // Deliberately doesn't enumerate the photos: the gallery is live, so any
+  // list hard-coded here would be wrong the moment a new post goes up.
+  photography: [
+    "I shoot when I travel, and the gallery on this page pulls straight from",
+    `Instagram${snapshotHandle ? ` (@${snapshotHandle})` : ""} — newest frames first, no manual updating.`,
+    "",
+    "Scroll to 06 — Through the lens to see them full size.",
+  ].join("\n"),
 
   awards: awards.map((a) => `• ${a}`).join("\n"),
 

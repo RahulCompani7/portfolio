@@ -6,12 +6,16 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "instagram:snapshot": "node scripts/sync-instagram.mjs",
+    "instagram:snapshot:dry": "node scripts/sync-instagram.mjs --dry-run",
+    "spotify:auth": "node scripts/spotify-auth.mjs"
   },
   "dependencies": {
     "next": "16.3.0",
     "react": "19.2.8",
-    "react-dom": "19.2.8"
+    "react-dom": "19.2.8",
+    "sharp": "^0.35.3"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",

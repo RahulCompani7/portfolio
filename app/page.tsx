@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState, useSyncExternalStore } from "react";
+import { useRef, useSyncExternalStore } from "react";
 import { portfolioData } from "@/lib/data";
 import Navigation from "./components/Navigation";
 import Hero from "./components/Hero";
@@ -10,54 +10,59 @@ import Experience from "./components/Experience";
 import Projects from "./components/Projects";
 import Skills from "./components/Skills";
 import Education from "./components/Education";
+import Photography from "./components/Photography";
+import Music from "./components/Music";
 import Terminal from "./components/Terminal";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import CustomCursor from "./components/CustomCursor";
 import Particles from "./components/Particles";
 
-const subscribeNoop = () => () => {};
+type Theme = "light" | "dark";
 
-// True only once the component has hydrated on the client — lets us defer
-// theme-dependent rendering without calling setState synchronously in an effect.
-function useMounted() {
-  return useSyncExternalStore(subscribeNoop, () => true, () => false);
+const THEME_EVENT = "rc-theme-change";
+
+/**
+ * The <html data-theme> attribute is the single source of truth, written
+ * before first paint by the inline script in layout.tsx. Reading it through
+ * useSyncExternalStore rather than mirroring it into state means:
+ *
+ *   - the page renders fully on the server (it previously returned null until
+ *     hydration, so crawlers and link previews saw an empty <body>);
+ *   - React swaps the server snapshot for the real one during hydration, so a
+ *     saved dark preference doesn't produce a mismatch warning;
+ *   - no setState inside an effect.
+ */
+function subscribeTheme(onChange: () => void) {
+  window.addEventListener(THEME_EVENT, onChange);
+  return () => window.removeEventListener(THEME_EVENT, onChange);
 }
 
-// Light is the default; only an explicitly saved "dark" preference overrides it.
-function getInitialTheme(): "light" | "dark" {
-  if (typeof window === "undefined") return "light";
-  try {
-    return localStorage.getItem("rc_theme") === "dark" ? "dark" : "light";
-  } catch {
-    return "light";
-  }
+function getThemeSnapshot(): Theme {
+  return document.documentElement.getAttribute("data-theme") === "dark" ? "dark" : "light";
+}
+
+/** Light is the default, and matches what the server markup assumes. */
+function getServerThemeSnapshot(): Theme {
+  return "light";
 }
 
 export default function Home() {
-  const [theme, setTheme] = useState<"light" | "dark">(getInitialTheme);
-  const mounted = useMounted();
+  const theme = useSyncExternalStore(subscribeTheme, getThemeSnapshot, getServerThemeSnapshot);
   const rootRef = useRef<HTMLDivElement>(null);
 
-  // Synchronize the DOM attribute (an external system) from React state.
-  useEffect(() => {
-    if (!mounted) return;
-    document.documentElement.setAttribute("data-theme", theme);
-  }, [mounted, theme]);
-
   const toggleTheme = () => {
-    const newTheme = theme === "dark" ? "light" : "dark";
-    setTheme(newTheme);
+    const next: Theme = theme === "dark" ? "light" : "dark";
+    document.documentElement.setAttribute("data-theme", next);
     try {
-      localStorage.setItem("rc_theme", newTheme);
+      localStorage.setItem("rc_theme", next);
     } catch {
       // ignore write errors (e.g. storage disabled)
     }
+    window.dispatchEvent(new Event(THEME_EVENT));
   };
 
   const themeIcon = theme === "dark" ? "☀️" : "🌙";
-
-  if (!mounted) return null;
 
   return (
     <div ref={rootRef} style={{ position: "relative", overflowX: "clip" }}>
@@ -74,6 +79,8 @@ export default function Home() {
       <Projects />
       <Skills />
       <Education />
+      <Photography />
+      <Music />
       <Terminal onToggleTheme={toggleTheme} />
       <Contact />
       <Footer />

@@ -66,13 +66,13 @@ export default function Terminal({ onToggleTheme }: { onToggleTheme?: () => void
     execute(cmd);
   };
 
-  const suggestions = ["about", "experience", "projects", "skills", "education", "contact", "resume", "help"];
+  const suggestions = ["about", "experience", "projects", "skills", "photography", "education", "contact", "resume", "help"];
 
   return (
     <section id="terminal" style={{ maxWidth: "940px", margin: "0 auto", padding: "20px 24px 130px", position: "relative", zIndex: 1 }}>
       <div className="rv" style={{ marginBottom: "34px" }}>
         <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "11.5px", fontWeight: 600, letterSpacing: "0.16em", color: "var(--acc)", textTransform: "uppercase", marginBottom: "16px" }}>
-          06 — Interview me
+          08 — Interview me
         </div>
         <h2 style={{ fontFamily: "'Bricolage Grotesque', sans-serif", fontSize: "clamp(30px, 4.2vw, 50px)", fontWeight: 800, letterSpacing: "-0.035em", margin: "0 0 12px", color: "var(--head)" }}>
           Skip the scroll. Just ask.

@@ -12,16 +12,31 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+/**
+ * Set NEXT_PUBLIC_SITE_URL in Vercel to the live domain. Without a
+ * metadataBase, Next can't turn relative OG image paths into absolute URLs
+ * and link previews break.
+ */
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL?.trim() || "https://rahulcompani.dev";
+
 export const metadata: Metadata = {
-  title: "Rahul Compani — Full-Stack Developer",
+  metadataBase: new URL(siteUrl),
+  title: "Rahul Compani — Full-Stack Developer & Photographer",
   description:
-    "Full-stack developer shipping scalable SaaS platforms, serverless cloud systems, and modern web applications.",
+    "Full-stack developer shipping scalable SaaS platforms, serverless cloud systems, and modern web applications. Senior Consultant at EY.",
   openGraph: {
     title: "Rahul Compani",
-    description: "Senior Consultant & Full-Stack Developer",
-    url: "https://rahulcompani.dev",
+    description: "Senior Consultant & Full-Stack Developer. Photographer at @aurah.lens.",
+    url: siteUrl,
+    siteName: "Rahul Compani",
     type: "profile",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Rahul Compani",
+    description: "Senior Consultant & Full-Stack Developer. Photographer at @aurah.lens.",
+  },
+  robots: { index: true, follow: true },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

@@ -176,6 +176,11 @@ export const contactInfo = {
   linkedin: "linkedin.com/in/rahul-compani",
   github: "github.com/RahulCompani7",
   resume: "/Rahul_Compani_Resume.pdf",
+  instagram: "https://instagram.com/aurah.lens",
+  // Open Spotify > your profile > ... > Share > Copy link to profile, and
+  // paste it here. The hero link stays hidden while this is empty — better
+  // than guessing an id and sending visitors to a stranger's profile.
+  spotify: "",
 };
 
 // ---------------------------------------------------------------------------

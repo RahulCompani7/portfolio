@@ -7,6 +7,7 @@ import {
   type ContributionDay,
   type GithubFeed,
 } from "@/lib/github";
+import BrandLogo from "./BrandLogo";
 
 /**
  * Live GitHub data, rendered inside the Skills section rather than as its own
@@ -78,6 +79,7 @@ export default function GithubPanel() {
           ) : null}
           <div style={{ minWidth: 0 }}>
             <a href={profile?.url ?? "#"} target="_blank" rel="noreferrer" className="gh-login">
+              <BrandLogo src="/github.svg" size={15} alt="GitHub" />
               @{profile?.login}
             </a>
             <div className="gh-stats">

@@ -1575,3 +1575,88 @@ textarea:focus {
     transition: none;
   }
 }
+
+/* ---------------------------------------------------------------------------
+   Mobile corrections.
+
+   The music section was overflowing on narrow screens: .mu-now-body carried a
+   220px min-width which, with the artwork and padding, exceeded a 360px
+   viewport and pushed the whole page sideways.
+   --------------------------------------------------------------------------- */
+
+/* Fallback label when a brand logo file hasn't been added yet. */
+.soc-text {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+@media (max-width: 720px) {
+  .mu-now-body {
+    /* Was 220px — the cause of the horizontal overflow. */
+    min-width: 0;
+    flex-basis: 100%;
+  }
+
+  .mu-now-label {
+    flex-wrap: wrap;
+    row-gap: 4px;
+  }
+
+  /* Stop the attribution being shoved off the edge by margin-left:auto. */
+  .mu-source {
+    margin-left: 0;
+  }
+
+  .mu-now-title {
+    word-break: break-word;
+  }
+
+  /* Long titles and artist names shouldn't widen the row. */
+  .mu-row-text,
+  .mu-row-title,
+  .mu-row-sub {
+    min-width: 0;
+  }
+
+  /* A wide release range would otherwise squeeze each column to nothing. */
+  .mu-decades {
+    overflow-x: auto;
+    gap: 8px;
+  }
+
+  .mu-decade {
+    min-width: 34px;
+    flex: 0 0 auto;
+  }
+}
+
+@media (max-width: 420px) {
+  /* Below this the artwork and text genuinely don't fit side by side. */
+  .mu-now {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .mu-now-art {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1;
+    max-width: 220px;
+  }
+
+  .gh-langkeys {
+    gap: 8px 14px;
+  }
+}
+
+/* Last-resort guard: nothing should be able to scroll the page sideways.
+   overflow-x: clip on the page root can't help children that overflow their
+   own container, so the containers are constrained here instead. */
+#music,
+#photography,
+#skills {
+  max-width: 100%;
+  overflow-x: clip;
+}

@@ -19,10 +19,13 @@ export default function BrandLogo({
   src,
   size = 17,
   alt = "",
+  fallback = null,
 }: {
   src: string;
   size?: number;
   alt?: string;
+  /** Shown when the asset is absent — keeps icon-only buttons from going blank. */
+  fallback?: React.ReactNode;
 }) {
   const [missing, setMissing] = useState(false);
 
@@ -37,7 +40,7 @@ export default function BrandLogo({
     if (node && node.complete && node.naturalWidth === 0) setMissing(true);
   }, []);
 
-  if (missing) return null;
+  if (missing) return <>{fallback}</>;
 
   return (
     // eslint-disable-next-line @next/next/no-img-element

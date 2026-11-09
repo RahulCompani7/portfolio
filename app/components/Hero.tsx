@@ -2,7 +2,8 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import { portfolioData } from "@/lib/data";
+import { contactInfo, portfolioData } from "@/lib/data";
+import BrandLogo from "./BrandLogo";
 
 export default function Hero() {
   const [roleWord, setRoleWord] = useState(portfolioData.roles[0]);
@@ -123,6 +124,14 @@ export default function Hero() {
                 <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
               </svg>
             </a>
+            <a href={contactInfo.instagram} target="_blank" rel="noreferrer" title="Instagram — @aurah.lens" className="soc" style={{ width: "44px", height: "44px", borderRadius: "12px", border: "1px solid var(--line2)", display: "grid", placeItems: "center", color: "var(--text)", background: "var(--soft)" }}>
+              <BrandLogo src="/instagram.svg" size={19} alt="Instagram" fallback={<span className="soc-text">IG</span>} />
+            </a>
+            {contactInfo.spotify && (
+              <a href={contactInfo.spotify} target="_blank" rel="noreferrer" title="Spotify" className="soc" style={{ width: "44px", height: "44px", borderRadius: "12px", border: "1px solid var(--line2)", display: "grid", placeItems: "center", color: "var(--text)", background: "var(--soft)" }}>
+                <BrandLogo src="/spotify.svg" size={19} alt="Spotify" fallback={<span className="soc-text">SP</span>} />
+              </a>
+            )}
             <a href="mailto:rahulcompani7@gmail.com" title="Email" className="soc" style={{ width: "44px", height: "44px", borderRadius: "12px", border: "1px solid var(--line2)", display: "grid", placeItems: "center", color: "var(--text)", background: "var(--soft)" }}>
               <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                 <path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-.9.732-1.636 1.636-1.636h.82L12 10.9l9.544-7.08h.82c.904 0 1.636.732 1.636 1.636Z" />
